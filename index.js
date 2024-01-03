@@ -1,21 +1,29 @@
 import clipboardy from 'clipboardy';
 
-export function mihoy() {
+export function nomihoy() {
   const processArgs = process.argv.slice(2);
 
   if (processArgs.length >= 1) {
-    const mihoy = processArgs.join(" ");
+    const nomihoy = processArgs.join(" ");
 
     const lines = [];
+    const maxWidth = 100; // Assuming 100 characters as the maximum width for each line
+    const height = 20; // Number of lines
 
-    for (let i = 0; i < 10; i++) {
-      console.log(" ".repeat(i * 2) + `- ${mihoy}`);
-      lines.push(" ".repeat(i * 2) + `- ${mihoy}`);
-    }
+    for (let i = 0; i < height; i++) {
+      let line = "";
+      let charToUse = (i < height / 2) ? "@" : "-"; // Use "@" for the first half, "-" for the second half
 
-    for (let i = 9; i >= 0; i--) {
-      console.log(" ".repeat(i * 2) + `- ${mihoy}`);
-      lines.push(" ".repeat(i * 2) + `- ${mihoy}`);
+      for (let j = 0; j < maxWidth; j++) {
+        if (j < maxWidth / 2 - Math.abs(height / 2 - i) || j > maxWidth / 2 + Math.abs(height / 2 - i)) {
+          line += charToUse;
+        } else {
+          line += " ";
+        }
+      }
+
+      console.log(line);
+      lines.push(line);
     }
 
     // Join lines and copy the output to the clipboard

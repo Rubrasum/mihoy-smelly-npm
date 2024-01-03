@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { mihoy } from "../index.js";
+import { nomihoy } from "../index.js";
 
-mihoy();
+nomihoy();

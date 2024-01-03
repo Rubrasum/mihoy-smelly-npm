@@ -1,5 +1,5 @@
 {
-  "name": "mihoy",
+  "name": "nomihoy",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
@@ -7,7 +7,7 @@
     "node": ">=18.0.0"
   },
   "bin": {
-    "mihoy": "./scripts/bin.js"
+    "nomihoy": "./scripts/bin.js"
   },
   "dependencies": {
     "clipboardy": "^4.0.0"
